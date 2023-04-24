@@ -1,0 +1,43 @@
+//設定框架
+void setFrame()
+{
+   color(5);
+   getCoord(30 ,1);
+   cout<<"    < 俄羅斯方塊遊戲 >"<<endl<<endl;
+   color(10);
+
+   // 主要框架
+   int x = LF_up_x ,y = 3; 
+   //橫向邊上下兩條邊
+   for(int i = 0; i < 30; ++i) {
+       getCoord(x ,2);  vis[x][2] = true;  cout<<"□";
+       getCoord(x ,23); vis[x][23] = true; cout<<"□";
+       x += 2;
+   }
+
+   //豎向兩條邊和小框左邊豎線
+   for(int i = 0; i < 21; ++i) {
+       getCoord(LF_up_x ,y) ; vis[LF_up_x][y] = true ; cout<<"□" ;
+       getCoord(71 ,y) ;      vis[71][y] = true ; cout<<"□" ;
+       getCoord(51 ,y) ;      vis[51][y] = true ; cout<<"□" ;
+       y += 1 ;
+   }
+
+   //小框架中間橫線
+   for(int i = 53 ;i <= 69 ; i += 2) {
+       getCoord(i ,11);
+       vis[i][11] = true;
+       cout<<"□";
+   }
+
+   //小框內容
+   color(10);
+   getCoord(53 ,3);  cout<<" Next Block : " ;
+   color(11) ;
+   getCoord(54 ,13) ; cout<<"開始 :  Enter 鍵" ;
+   getCoord(54 ,15) ; cout<<"暫停 :  T 鍵" ;
+   getCoord(54 ,17) ; cout<<"退出 :  Q 鍵" ;
+   getCoord(54 ,19) ;  cout<<"Grade:" ;
+   getCoord(54 ,21) ; cout<<"Level :" ;
+   T_Box::staticNum(0) ;
+}
