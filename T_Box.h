@@ -7,7 +7,7 @@ using namespace std;
 class T_Box
 {
     static int space[40][10];
-    static int score;
+//     static int score;
 
     private :
             int x ,y ; // 座標
@@ -21,13 +21,14 @@ class T_Box
             void d();
             void tl();
             void tr();
-            void show(int);
+            void show(int, int);
             void create();
             void ereace();
             int judge();
-            void check(int);
-            int end();
+            void check(int, int*);
+            int end(int);
             void preview();
+            void emptySpace();
 
 
 };

@@ -5,7 +5,7 @@ using namespace std;
 
 
     int T_Box::space[40][10] = {{0},{0}};
-    int T_Box::score = 0;
+    // int T_Box::score = 0;
     
     T_Box::T_Box(int sx,int sy,int ty,int fg){
         this->x = sx;
@@ -52,7 +52,7 @@ using namespace std;
     void T_Box::d(){
         x++;
     }
-    void T_Box::show(int level){
+    void T_Box::show(int level, int score){
         cout << "LEVEL: " << level << " SCORE: " << score << endl; 
         for(int i=2;i<23;i++){
             for(int j=0;j<12;j++){
@@ -95,7 +95,7 @@ using namespace std;
         }
         return 0;
     }
-    void T_Box::check(int level){
+    void T_Box::check(int level, int *score){
         int count = 0;
         for(int i=2;i<22;i++){
             int sum = 0;
@@ -122,23 +122,23 @@ using namespace std;
         switch (count)
         {
         case 1:
-            score += 40*(level+1);
+            *score += 40*(level+1);
             break;
         case 2:
-            score += 100*(level+1);
+            *score += 100*(level+1);
             break;
         case 3:
-            score += 300*(level+1);
+            *score += 300*(level+1);
             break;
         case 4:
-            score += 1200*(level+1);
+            *score += 1200*(level+1);
             break;
         
         default:
             break;
         }
     }
-    int T_Box::end(){
+    int T_Box::end(int score){
         if(x<1){
             system("cls");
             cout << "game over" << endl;
@@ -160,5 +160,13 @@ using namespace std;
                 }
             }
             cout << endl;
+        }
+    }
+
+    void T_Box::emptySpace(){
+        for(int i=0;i<40;i++){
+            for(int j=0;j<10;j++){
+                space[i][j] = 0;
+            }
         }
     }
