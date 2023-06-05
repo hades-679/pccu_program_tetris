@@ -32,11 +32,9 @@
 使用virtual studio執行專案
 
 ## 程式畫面截圖
-![](https://hackmd.io/_uploads/Byxu8gUi8h.jpg)
-![](https://hackmd.io/_uploads/rkkDxIs8h.jpg)
-![](https://hackmd.io/_uploads/HyXDgIjIn.jpg)
-
-
+![image](14.jpg)
+![image](15.jpg)
+![image](16.jpg)
 
 ## 分工資訊
 方塊：王柏旻
